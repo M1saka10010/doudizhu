@@ -48,11 +48,14 @@ npm run preview
 
 ## 部署到 GitHub Pages
 
-仓库已包含 `.github/workflows/deploy-pages.yml`。将代码推送到 `main` 后：
+仓库已包含 `.github/workflows/deploy-pages.yml`。首次部署前必须先在 GitHub 启用 Pages：
 
 1. 打开 GitHub 仓库的 `Settings → Pages`
 2. 将 Source 设为 `GitHub Actions`
-3. 重新运行 `Deploy GitHub Pages` 工作流
+3. 打开 `Actions → Deploy GitHub Pages`
+4. 点击 `Run workflow`，或重新运行之前失败的工作流
+
+如果首次推送发生在启用 Pages 之前，`configure-pages` 会报告 `Get Pages site failed: Not Found`；启用后重新运行即可。
 
 无需配置服务器地址或 API Key。
 
